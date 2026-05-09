@@ -1,0 +1,240 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>Tribunal Difensore</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- HEADER -->
+
+  <header class="header">
+
+    <div class="brand">
+
+      <div class="logo">⚖️</div>
+
+      <div>
+        <small>Studio Penale</small>
+        <h1>Tribunal Difensore</h1>
+      </div>
+
+    </div>
+
+    <div class="hud">
+
+      <div class="stat">
+        <span>Reputazione</span>
+        <strong id="rep">12</strong>
+      </div>
+
+      <div class="stat">
+        <span>Soldi</span>
+        <strong id="money">€2400</strong>
+      </div>
+
+      <div class="stat">
+        <span>Vittorie</span>
+        <strong id="wins">0</strong>
+      </div>
+
+      <div class="stat">
+        <span>Stress</span>
+        <strong id="stress">5</strong>
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- SCREENS -->
+
+  <main class="screens">
+
+    <!-- HOME -->
+
+    <section class="screen active" id="homeScreen">
+
+      <div class="screenHead">
+        <h2>Casi disponibili</h2>
+        <p>Nuovi clienti stanno cercando difesa.</p>
+      </div>
+
+      <div id="caseList"></div>
+
+    </section>
+
+    <!-- CASE -->
+
+    <section class="screen" id="caseScreen">
+
+      <div class="screenHead">
+        <h2 id="caseTitle">Fascicolo</h2>
+        <p id="caseCharge">—</p>
+      </div>
+
+      <div class="tabs">
+
+        <button class="tab active"
+        data-tab="evidenceTab">
+          Prove
+        </button>
+
+        <button class="tab"
+        data-tab="strategyTab">
+          Strategia
+        </button>
+
+        <button class="tab"
+        data-tab="courtTab">
+          Aula
+        </button>
+
+      </div>
+
+      <!-- PROVE -->
+
+      <div class="tabContent active"
+      id="evidenceTab">
+
+        <div id="evidenceList"></div>
+
+      </div>
+
+      <!-- STRATEGIA -->
+
+      <div class="tabContent"
+      id="strategyTab">
+
+        <div class="card">
+          <h3>Linea difensiva</h3>
+
+          <div class="strategyList">
+
+            <button class="strategyBtn"
+            onclick="selectStrategy('aggressive')">
+              Aggressiva
+            </button>
+
+            <button class="strategyBtn"
+            onclick="selectStrategy('technical')">
+              Tecnica
+            </button>
+
+            <button class="strategyBtn"
+            onclick="selectStrategy('empathetic')">
+              Empatica
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- COURT -->
+
+      <div class="tabContent"
+      id="courtTab">
+
+        <div class="assistant">
+          <small>Assistente</small>
+
+          <div id="assistantText">
+            Preparati all’udienza.
+          </div>
+        </div>
+
+        <div id="courtLog"></div>
+
+        <div class="choices">
+
+          <button onclick="playMove('evidence')">
+            Mostra prova
+          </button>
+
+          <button onclick="playMove('objection')">
+            Obiezione
+          </button>
+
+          <button onclick="playMove('pressure')">
+            Controesame
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- STUDIO -->
+
+    <section class="screen" id="studioScreen">
+
+      <div class="screenHead">
+        <h2>Studio Legale</h2>
+        <p>La tua carriera nel foro penale.</p>
+      </div>
+
+      <div class="card">
+        <h3>Prestigio</h3>
+
+        <div class="meter">
+          <div id="prestigeMeter"></div>
+        </div>
+
+      </div>
+
+      <div class="card">
+        <h3>Ultimo verdetto</h3>
+
+        <p id="lastVerdict">
+          Nessun processo concluso.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- NAV -->
+
+  <nav class="nav">
+
+    <button class="navBtn active"
+    data-screen="homeScreen">
+      Home
+    </button>
+
+    <button class="navBtn"
+    data-screen="caseScreen">
+      Fascicolo
+    </button>
+
+    <button class="navBtn"
+    data-screen="studioScreen">
+      Studio
+    </button>
+
+  </nav>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
